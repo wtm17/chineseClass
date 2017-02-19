@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Train</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="trainingForm" (ngSubmit)="startTraining($event)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Characters</ion-label>
+        <ion-input type="text" formControlName="characters"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Goal: <ion-badge>{{ trainingForm.controls.goal.value }}</ion-badge></ion-label>
+        <ion-range min="1" max="10" pin="true" snaps="true" formControlName="goal">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Show Outline: <ion-badge>{{ trainingForm.controls.showOutline.value }}</ion-badge></ion-label>
+        <ion-range min="1" max="10" pin="true" snaps="true" formControlName="showOutline">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>10</ion-label>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+    <button ion-button secondary type="submit">Start Training</button>
+  </form>
+
+</ion-content>

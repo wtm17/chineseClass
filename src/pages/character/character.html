@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Characters</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <div *ngIf="done">
+      <ion-row>
+        <ion-col width-100 text-center>
+          <h1><ion-icon name="checkmark-circle-outline"></ion-icon> Complete!</h1>
+          <button ion-button secondary (click)="back()">Home</button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="!done">
+      <ion-row>
+        <ion-col width-100>Count: {{ count }} / {{ goal }}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-100>
+          <div id="character-writer"></div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-100>
+          <button (click)="animate()" ion-button icon-left>
+            <ion-icon name="play" ></ion-icon>
+            Animate
+          </button>
+          <button (click)="reset()" ion-button icon-left>
+            <ion-icon name="refresh" ></ion-icon>
+            Reset
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
