@@ -10,8 +10,10 @@
     <div *ngIf="done">
       <ion-row>
         <ion-col width-100 text-center>
-          <h1><ion-icon name="checkmark-circle-outline"></ion-icon> Complete!</h1>
-          <button ion-button secondary (click)="back()">Home</button>
+          <div class="done">
+            <h1><ion-icon name="checkmark-circle-outline"></ion-icon> Complete!</h1>
+            <button ion-button secondary (click)="back()" block>Done</button>
+          </div>
         </ion-col>
       </ion-row>
     </div>
